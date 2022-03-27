@@ -1,6 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:teach_bloc_with_api/services/client.dart';
-import 'package:teach_bloc_with_api/services/user_api.dart';
+import 'package:teach_bloc_with_api/navigation/navigation.dart';
 
 class UserListPage extends StatefulWidget {
   const UserListPage({Key? key}) : super(key: key);
@@ -10,16 +10,30 @@ class UserListPage extends StatefulWidget {
 }
 
 class _UserListPageState extends State<UserListPage> {
-  UserAPI _userAPI = UserAPI(client: dio);
-
   @override
   void initState() {
     super.initState();
-    _userAPI.getUsers();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final _route = AutoRouter.of(context);
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('User Details'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            _route.pushAll([
+              UserDetailsRoute(title: "Hello From Other Side"),
+              UserDetailsRoute(title: "Hello From Other Side")
+            ]);
+          },
+          child: const Text('Go to Details'),
+        ),
+      ),
+    );
   }
 }

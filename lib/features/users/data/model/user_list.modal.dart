@@ -29,6 +29,22 @@ class UserList {
   /// to JSON. The implementation simply calls the private, generated
   /// helper method `_$UserListToJson`.
   Map<String, dynamic> toJson() => _$UserListToJson(this);
+
+  UserList copyWith({
+    int? page,
+    int? perPage,
+    int? total,
+    int? totalPages,
+    List<UserModel>? list,
+  }) {
+    return UserList(
+      page: page ?? this.page,
+      perPage: perPage ?? this.perPage,
+      total: total ?? this.total,
+      totalPages: totalPages ?? this.totalPages,
+      list: list ?? this.list,
+    );
+  }
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)

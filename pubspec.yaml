@@ -38,6 +38,7 @@ dependencies:
   dio: ^4.0.4
   # https://docs.flutter.dev/development/data-and-backend/json
   json_annotation: ^4.4.0
+  auto_route: ^3.2.4
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +52,7 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   json_serializable: ^6.1.5
   build_runner: ^2.1.8
+  auto_route_generator: ^3.2.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
